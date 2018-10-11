@@ -15,7 +15,7 @@ public class Person {
 		this.dob=dob;
 	}
 	
-	public void setName(Date dob) {
+	public void setName(String name) {
 		this.name=name;
 	}
 	
