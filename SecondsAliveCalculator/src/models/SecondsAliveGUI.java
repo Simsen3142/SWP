@@ -23,12 +23,13 @@ public class SecondsAliveGUI extends JFrame {
 	private static JCalendar calendar;
 	private static JLabel lbl_header;
 	private static Date dob;
+	private static Person person;
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		
+		person=Person.getInstance();
 		try {
 			UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
 		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException
@@ -51,8 +52,7 @@ public class SecondsAliveGUI extends JFrame {
 		for(;;) {
 			try {
 				Thread.sleep(10);
-			
-				dob = calendar.getDate();
+				person.setDob(calendar.getDate());
 				lbl_seconds.setText(getFormttedOutputtext());
 			} catch (Exception e) {
 			}
@@ -91,7 +91,7 @@ public class SecondsAliveGUI extends JFrame {
 	
 	private static String getFormttedOutputtext() {
 		return "<HTML>Bereits<br>"+
-				String.format("%,.2f", ((double)getMillisFromDateTillNow(dob))/1000.0)+
+				String.format("%,.2f", ((double)getMillisFromDateTillNow(person.getDob()))/1000.0)+
 				" Sekunden<br>am Leben";
 	}
 	
