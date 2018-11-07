@@ -12,6 +12,7 @@ import javax.swing.border.EmptyBorder;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.util.ArrayList;
 import java.util.Date;
 import java.awt.Color;
 import com.toedter.calendar.JCalendar;
@@ -22,7 +23,6 @@ public class SecondsAliveGUI extends JFrame {
 	private static JLabel lbl_seconds;
 	private static JCalendar calendar;
 	private static JLabel lbl_header;
-	private static Date dob;
 	private static Person person;
 
 	/**
@@ -99,5 +99,6 @@ public class SecondsAliveGUI extends JFrame {
 		long dateMillis=date.getTime(), now=System.currentTimeMillis();
 		return now-dateMillis;
 	}
-
+	
+	
 }
