@@ -1,3 +1,3 @@
 public interface IObserver{
-	public void actionDone();
+	public void actionDone(Subject subject);
 }

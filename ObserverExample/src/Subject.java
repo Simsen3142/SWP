@@ -5,7 +5,7 @@ public abstract class Subject {
 	
 	protected void notifyObservers() {
 		for(IObserver observer:observers) {
-			observer.actionDone();
+			observer.actionDone(this);
 		}
 	}
 	
